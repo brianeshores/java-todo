@@ -113,16 +113,14 @@ public class Main {
     }
 
     public static void printTasks(ArrayList<Task> taskList, SimpleDateFormat sdf) {
-        System.out.println("Title                     Due Date            Status                  Description");
+        System.out.printf("%-40s| %-11s| %-11s| %-40s", "TaskName", "Due Date", "Status", "Description");
+        System.out.println();
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
-        for (Task task : taskList) {
-            System.out.printf("%-25s", task.getTitle());
-            System.out.printf("%-19s", sdf.format(task.getDate()));
-            System.out.printf("%-25s", task.getStatus());
-            System.out.printf("%-15s", task.getDescription());
+        for (int i = 0; i < taskList.size(); i++) {
+            System.out.printf(String.format("%-40s| %-11s| %-11s| %-40s", i + 1 + ". " + taskList.get(i).getTitle(), sdf.format(taskList.get(i).getDate()),
+                    taskList.get(i).getStatus(), taskList.get(i).getDescription()));
             System.out.println();
         }
-        System.out.println("\n");
     }
 
     public static void main(String[] args) {
