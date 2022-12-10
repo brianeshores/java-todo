@@ -152,7 +152,7 @@ public class Main {
                     break;
                 }
                 catch (InputMismatchException e) {
-                    System.out.print("Please try a number between 1-6");
+                    System.out.print("Please try a number between 1-6 \n");
                 }
             }
             switch (option) {
